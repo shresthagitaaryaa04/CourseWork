@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 42px rgba(0, 0, 0, 0.1);
+  
+  
+  
+  padding: 0 40px;
+}
+
+.logo img {
+    width: 50px;
+    height: auto;
+}
+.navbar .logo {
+  font-size: 18px;
+}
+
+.navbar nav a {
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  margin: 0 12px;
+}
+
+.navbar .signup {
+  border: 1px solid #000;
+  background: transparent;
+  padding: 6px 14px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.hero {
+  height: 420px;
+  background-color: #e2e2e2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 120px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  font-size: 12px;
+  margin-top: -10px;
+}
+
+.green-strip {
+  height: 70px;
+  background-color: #5b6f33;
+}
+
+/* Yo cards chahi maile banayeko class ho hai, it's not predefined class, jhukkinxa ki bhanera lekhdihaleko, ik y'all smart :) */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 0;
+}
+
+.card {
+  width: 220px;
+}
+
+.card .image {
+  width: 100%;
+  height: 160px;
+  background-color: #000;
+  margin-bottom: 12px;
+}
+
+.card p {
+  font-size: 13px;
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.card span {
+  font-size: 11px;
+  color: #666;
+}
+
+.blog-section {
+  background-color: #dcd9bf;
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.blog-box {
+  width: 260px;
+  height: 260px;
+  background-color: #e5e5e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  text-transform: lowercase;
+}
+
+.footer-strip {
+  height: 80px;
+  background-color: #1f3317;
+}
