@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About Us | Eco Sathi</title>
+
+  <!-- External base CSS -->
+  <link rel="stylesheet" href="C:\Users\Shubhashika College\Desktop\EcoSathi\style.css">
+
+  <!-- Page-specific internal CSS -->
+  <style>
+    /* About section (first half) */
+    *{
+        font-family: Arial, Helvetica, sans-serif ;
+    }
+    .hero-image
+    {
+        width:100%;
+        height: 750px;
+        background-color: #ccc;
+    }
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .about-section {
+  display: flex;
+  gap: 60px;
+  padding: 80px 100px;
+  align-items: center;
+}
+
+
+    .about-text {
+  width: 40%;
+  background-color: rgb(31, 51, 23); /* dark green */
+  padding: 40px;
+  border-radius: 12px; /* slightly round edges */
+}
+
+.about-text h2 {
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: rgb(245, 245, 245);
+}
+
+.about-text p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: rgb(220, 220, 220);
+}
+ .hero-text {
+  width: 40%;
+  background-color: rgb(31, 51, 23); /* dark green */
+  padding: 40px;
+  border-radius: 12px; /* slightly round edges */
+}
+
+.hero-text h2 {
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: rgb(245, 245, 245);
+}
+
+.hero-text p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: rgb(220, 220, 220);
+}
+
+
+
+    /* Team section */
+    .team-section {
+      display: flex;
+      width: 100%;
+      height: 420px;
+    }
+
+    .team-card {
+      flex: 1;
+      position: relative;
+      text-decoration: none;
+      color: white;
+      overflow: hidden;
+    }
+
+    .team-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .team-overlay {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.55);
+    }
+
+    .team-overlay h3 {
+      font-size: 20px;
+      margin-bottom: 4px;
+    }
+
+    .team-overlay p {
+      font-size: 12px;
+    }
+
+    /*.team-card:hover img {
+      transform: scale(1.05);
+      transition: 0.4s;
+    }*/
+    
+    
+  </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+  <div class="logo">Eco Sathi</div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Products</a>
+    <a href="#">Research</a>
+    <a href="#">Blog</a>
+    <a href="#">About Us</a>
+  </nav>
+  <button class="signup">Sign Up</button>
+</div>
+
+<!-- Hero -->
+<div class="hero-image">
+    <img src="C:\Users\Shubhashika College\Desktop\EcoSathi\images\pic1.png" alt="Hear Our Story">
+</div>
+    
+
+
+
+ <div class="about-section">
+  <div class="hero-text">
+    <h2>Hear Our Story</h2>
+    <p style="font-size: 20px;">
+      Eco Sathi was born from a simple thought — living sustainably should be easy
+      and accessible for everyone. We saw how everyday products contribute to waste
+      and environmental harm, and we wanted to offer a better alternative. Our journey
+      began with a desire to promote organic, reusable, and handcrafted products that
+      are made with care for both people and the planet. By working closely with local
+      artisans and ethical producers, we ensure that every product tells a story of
+      responsibility and purpose.
+    </p>
+  </div>
+</div>
+
+<!-- SECTION 2: Learn Our Motto -->
+<div class="about-section">
+  <div class="about-text">
+    <h2>Learn Our Motto</h2>
+    <p style="font-size: 20px;">
+      Every small choice matters. By choosing eco-friendly products, we reduce waste,
+      protect nature, and support a healthier future for everyone. Our motto is built
+      around the belief that sustainability is about making better choices whenever
+      possible and encouraging mindful consumption.
+    </p>
+  </div>
+</div>
+
+
+
+<!-- Second Half: Meet Our Team -->
+<div class="team-section">
+
+  <a href="C:\Users\Shubhashika College\Desktop\EcoSathi\images\shubhashika.png" class="team-card">
+    <img src="C:\Users\Shubhashika College\Desktop\EcoSathi\images\meai.png" alt="Shubhashika">
+    <div class="team-overlay">
+      <h3>Shubhashika Tamrakar</h3>
+      <p>Founder</p>
+    </div>
+  </a>
+
+  <a href="C:\Users\Shubhashika College\Desktop\EcoSathi\images\Aarya Shrestha.png" class="team-card">
+    <img src="C:\Users\Shubhashika College\Desktop\EcoSathi\images\aaryaai.png" alt="Aarya">
+    <div class="team-overlay">
+      <h3>Aarya Shrestha</h3>
+      <p>Operations</p>
+    </div>
+    
+    
+
+  
+
+  <a href="C:\Users\Shubhashika College\Desktop\EcoSathi\images\of rsn.png" class="team-card">
+    <img src="C:\Users\Shubhashika College\Desktop\EcoSathi\images\roshanai.png" alt="Roshan">
+    <div class="team-overlay">
+      <h3>Roshan Sapkota</h3>
+      <p>Marketing</p>
+    </div>
+  </a>
+
+  <a href="aakarshan.html" class="team-card">
+    <img src="C:\Users\Shubhashika College\Desktop\EcoSathi\images\akarshanai.png" alt="Aakarshan">
+    <div class="team-overlay">
+      <h3>Aakarshan Acharya</h3>
+      <p>Research</p>
+    </div>
+  </a>
+
+</div>
+
+<div class="footer-strip"></div>
+
+</body>
+</html>
