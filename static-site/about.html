@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<!--
+=============================================================================
+EcoMart - About Us Page
+Author: EcoMart Team
+Description: About Us page featuring detailed portfolios of each team
+             member including skills, education, certifications, and
+             volunteering experience.
+=============================================================================
+-->
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meet the EcoMart team - passionate individuals dedicated to making sustainable living accessible to everyone.">
+    
+    <!-- Page Title -->
+    <title>About Us - EcoMart Team</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="images/Logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/Logo.png">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Internal CSS for about page specific styles -->
+    <style>
+        /* Enhanced team card styling */
+        .team-card-detailed {
+            background: hsl(var(--card));
+            border-radius: var(--radius-lg);
+            border: 1px solid hsl(var(--border));
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+        
+        .team-card-header {
+            background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+            padding: 2rem;
+            text-align: center;
+            color: white;
+        }
+        
+        .team-card-header .team-avatar {
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            margin: 0 auto 1rem;
+        }
+        
+        .team-card-header h3 {
+            color: white;
+            margin-bottom: 0.25rem;
+        }
+        
+        .team-card-header .team-role {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+        }
+        
+        .team-card-body {
+            padding: 1.5rem;
+        }
+        
+        .portfolio-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .portfolio-section h4 {
+            font-size: 1rem;
+            color: hsl(var(--primary));
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .portfolio-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .portfolio-section li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid hsl(var(--border));
+            color: hsl(var(--muted-foreground));
+            font-size: 0.875rem;
+        }
+        
+        .portfolio-section li:last-child {
+            border-bottom: none;
+        }
+        
+        .certification-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            background: hsl(var(--secondary) / 0.2);
+            color: hsl(var(--secondary-foreground));
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.75rem;
+            margin: 0.25rem;
+        }
+        
+        /* Social links */
+        .social-links {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .social-link {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: hsl(var(--muted));
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        
+        .social-link:hover {
+            background: hsl(var(--primary));
+            color: white;
+        }
+        
+        /* Mission section */
+        .mission-section {
+            background: linear-gradient(135deg, hsl(var(--primary) / 0.1), hsl(var(--accent) / 0.1));
+            padding: 3rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .mission-section h2 {
+            margin-bottom: 1rem;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .value-item {
+            text-align: center;
+        }
+        
+        .value-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- =================================================================
+         NAVIGATION BAR
+         ================================================================= -->
+    <nav class="navbar">
+        <div class="container flex-between">
+            <a href="index.html" class="logo">
+                <img src="images/Logo.png" alt="EcoMart logo" class="site-logo">
+                <span>EcoMart</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span>☰</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- =================================================================
+         PAGE HEADER
+         ================================================================= -->
+    <header class="page-header">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>About Us</span>
+            </nav>
+            
+            <h1>Meet Our Team</h1>
+            <p>Passionate individuals dedicated to making sustainable living accessible and enjoyable for everyone.</p>
+        </div>
+    </header>
+
+    <!-- =================================================================
+         MAIN CONTENT
+         ================================================================= -->
+    <main class="section">
+        <div class="container">
+            <!-- =================================================================
+                 MISSION SECTION
+                 ================================================================= -->
+            <div class="mission-section">
+                <h2>Our Mission</h2>
+                <p style="max-width: 700px; margin: 0 auto;">At EcoMart, we believe that small changes lead to big impact. Our mission is to make sustainable products accessible, affordable, and attractive to everyone, empowering consumers to make eco-conscious choices without compromise.</p>
+                
+                <div class="values-grid">
+                    <div class="value-item">
+                        <div class="value-icon">🌍</div>
+                        <h4>Sustainability</h4>
+                        <p class="text-muted">Every product meets strict environmental standards</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">💚</div>
+                        <h4>Transparency</h4>
+                        <p class="text-muted">Full visibility into our supply chain and practices</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">🤝</div>
+                        <h4>Community</h4>
+                        <p class="text-muted">Building a movement of conscious consumers</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">✨</div>
+                        <h4>Quality</h4>
+                        <p class="text-muted">Products that are both beautiful and durable</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =================================================================
+                 TEAM MEMBERS
+                 Detailed portfolio cards for each team member
+                 ================================================================= -->
+            <h2 class="text-center mb-4">The Team Behind EcoMart</h2>
+            
+            <div class="team-grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+                
+                <!-- Team Member 1: Sarah Chen - Founder & CEO -->
+                <article class="team-card-detailed">
+                    <div class="team-card-header">
+                        <div class="team-avatar" style="display: flex; align-items: center; justify-content: center; font-size: 3rem; border-radius: 50%;">
+                            👩‍💼
+                        </div>
+                        <h3>Sarah Chen</h3>
+                        <p class="team-role">Founder & CEO</p>
+                    </div>
+                    <div class="team-card-body">
+                        <!-- Technical Skills -->
+                        <div class="portfolio-section">
+                            <h4>🔧 Technical Skills</h4>
+                            <div class="skills-list" style="justify-content: flex-start;">
+                                <span class="skill-tag">Business Strategy</span>
+                                <span class="skill-tag">Product Management</span>
+                                <span class="skill-tag">Data Analytics</span>
+                                <span class="skill-tag">Supply Chain</span>
+                                <span class="skill-tag">E-commerce</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Soft Skills -->
+                        <div class="portfolio-section">
+                            <h4>💡 Soft Skills</h4>
+                            <div class="skills-list" style="justify-content: flex-start;">
+                                <span class="skill-tag">Leadership</span>
+                                <span class="skill-tag">Public Speaking</span>
+                                <span class="skill-tag">Negotiation</span>
+                                <span class="skill-tag">Team Building</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Education -->
+                        <div class="portfolio-section">
+                            <h4>🎓 Education</h4>
+                            <ul>
+                                <li><strong>MBA, Sustainable Business</strong> - Stanford Graduate School of Business (2018)</li>
+                                <li><strong>BS, Environmental Science</strong> - UC Berkeley (2014)</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Certifications -->
+                        <div class="portfolio-section">
+                            <h4>📜 Certifications</h4>
+                            <div>
+                                <span class="certification-badge">🏆 B Corp Leader</span>
+                                <span class="certification-badge">🌱 LEED Green Associate</span>
+                                <span class="certification-badge">📊 Google Analytics</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Volunteering -->
+                        <div class="portfolio-section">
+                            <h4>🤝 Volunteering</h4>
+                            <ul>
+                                <li>Board Member - Ocean Conservancy (2020-Present)</li>
+                                <li>Mentor - Women in Sustainable Business (2019-Present)</li>
+                                <li>Volunteer - Local Beach Cleanup Coordinator (2016-Present)</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Social Links -->
+                        <div class="social-links">
+                            <a href="#" class="social-link" title="LinkedIn">💼</a>
+                            <a href="#" class="social-link" title="Twitter">🐦</a>
+                            <a href="#" class="social-link" title="Email">📧</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Team Member 2: Marcus Johnson - CTO -->
+                <article class="team-card-detailed">
+                    <div class="team-card-header">
+                        <div class="team-avatar" style="display: flex; align-items: center; justify-content: center; font-size: 3rem; border-radius: 50%;">
+                            👨‍💻
+                        </div>
+                        <h3>Marcus Johnson</h3>
+                        <p class="team-role">Chief Technology Officer</p>
+                    </div>
+                    <div class="team-card-body">
+                        <!-- Technical Skills -->
+                        <div class="portfolio-section">
+                            <h4>🔧 Technical Skills</h4>
+                            <div class="skills-list" style="justify-content: flex-start;">
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">AWS</span>
+                                <span class="skill-tag">System Architecture</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Soft Skills -->
+                        <div class="portfolio-section">
+                            <h4>💡 Soft Skills</h4>
+                            <div class="skills-list" style="justify-content: flex-start;">
+                                <span class="skill-tag">Problem Solving</span>
+                                <span class="skill-tag">Technical Leadership</span>
+                                <span class="skill-tag">Mentoring</span>
+                                <span class="skill-tag">Agile Methodology</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Education -->
+                        <div class="portfolio-section">
+                            <h4>🎓 Education</h4>
+                            <ul>
+                                <li><strong>MS, Computer Science</strong> - MIT (2016)</li>
+                                <li><strong>BS, Software Engineering</strong> - Georgia Tech (2014)</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Certifications -->
+                        <div class="portfolio-section">
+                            <h4>📜 Certifications</h4>
+                            <div>
+                                <span class="certification-badge">☁️ AWS Solutions Architect</span>
+                                <span class="certification-badge">🔐 Certified Ethical Hacker</span>
+                                <span class="certification-badge">📱 Google Mobile Web Specialist</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Volunteering -->
+                        <div class="portfolio-section">
+                            <h4>🤝 Volunteering</h4>
+                            <ul>
+                                <li>Code Instructor - Code.org (2018-Present)</li>
+                                <li>Tech Mentor - Black Boys Code (2019-Present)</li>
+                                <li>Open Source Contributor - Various Green Tech Projects</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Social Links -->
+                        <div class="social-links">
+                            <a href="#" class="social-link" title="LinkedIn">💼</a>
+                            <a href="#" class="social-link" title="GitHub">🐙</a>
+                            <a href="#" class="social-link" title="Email">📧</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Team Member 3: Emma Rodriguez - Head of Product -->
+                <article class="team-card-detailed">
+                    <div class="team-card-header">
+                        <div class="team-avatar" style="display: flex; align-items: center; justify-content: center; font-size: 3rem; border-radius: 50%;">
+                            👩‍🎨
+                        </div>
+                        <h3>Emma Rodriguez</h3>
+                        <p class="team-role">Head of Product</p>
+                    </div>
+                    <div class="team-card-body">
+                        <!-- Technical Skills -->
+                        <div class="portfolio-section">
+                            <h4>🔧 Technical Skills</h4>
+                            <div class="skills-list" style="justify-content: flex-start;">
+                                <span class="skill-tag">Product Strategy</span>
+                                <span class="skill-tag">UX Research</span>
+                                <span class="skill-tag">Figma</span>
+                                <span class="skill-tag">A/B Testing</span>
+                                <span class="skill-tag">SQL</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Soft Skills -->
+                        <div class="portfolio-section">
+                            <h4>💡 Soft Skills</h4>
+                            <div class="skills-list" style="justify-content: flex-start;">
+                                <span class="skill-tag">User Empathy</span>
+                                <span class="skill-tag">Cross-functional Collaboration</span>
+                                <span class="skill-tag">Storytelling</span>
+                                <span class="skill-tag">Strategic Thinking</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Education -->
+                        <div class="portfolio-section">
+                            <h4>🎓 Education</h4>
+                            <ul>
+                                <li><strong>MS, Human-Computer Interaction</strong> - Carnegie Mellon (2017)</li>
+                                <li><strong>BA, Psychology</strong> - UCLA (2015)</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Certifications -->
+                        <div class="portfolio-section">
+                            <h4>📜 Certifications</h4>
+                            <div>
+                                <span class="certification-badge">📊 Certified Scrum Product Owner</span>
+                                <span class="certification-badge">🎨 IDEO Design Thinking</span>
+                                <span class="certification-badge">📈 Product School PM</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Volunteering -->
+                        <div class="portfolio-section">
+                            <h4>🤝 Volunteering</h4>
+                            <ul>
+                                <li>Design Mentor - Girls Who Code (2018-Present)</li>
+                                <li>UX Consultant - Environmental NGOs (Pro Bono)</li>
+                                <li>Speaker - Women in Product Conferences</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Social Links -->
+                        <div class="social-links">
+                            <a href="#" class="social-link" title="LinkedIn">💼</a>
+                            <a href="#" class="social-link" title="Dribbble">🎨</a>
+                            <a href="#" class="social-link" title="Email">📧</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Team Member 4: David Kim - Sustainability Director -->
+                <article class="team-card-detailed">
+                    <div class="team-card-header">
+                        <div class="team-avatar" style="display: flex; align-items: center; justify-content: center; font-size: 3rem; border-radius: 50%;">
+                            👨‍🔬
+                        </div>
+                        <h3>David Kim</h3>
+                        <p class="team-role">Sustainability Director</p>
+                    </div>
+                    <div class="team-card-body">
+                        <!-- Technical Skills -->
+                        <div class="portfolio-section">
+                            <h4>🔧 Technical Skills</h4>
+                            <div class="skills-list" style="justify-content: flex-start;">
+                                <span class="skill-tag">Life Cycle Assessment</span>
+                                <span class="skill-tag">Carbon Accounting</span>
+                                <span class="skill-tag">Environmental Compliance</span>
+                                <span class="skill-tag">GIS Mapping</span>
+                                <span class="skill-tag">Data Visualization</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Soft Skills -->
+                        <div class="portfolio-section">
+                            <h4>💡 Soft Skills</h4>
+                            <div class="skills-list" style="justify-content: flex-start;">
+                                <span class="skill-tag">Research</span>
+                                <span class="skill-tag">Report Writing</span>
+                                <span class="skill-tag">Stakeholder Management</span>
+                                <span class="skill-tag">Policy Advocacy</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Education -->
+                        <div class="portfolio-section">
+                            <h4>🎓 Education</h4>
+                            <ul>
+                                <li><strong>PhD, Environmental Engineering</strong> - Columbia University (2019)</li>
+                                <li><strong>BS, Chemical Engineering</strong> - Cornell University (2014)</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Certifications -->
+                        <div class="portfolio-section">
+                            <h4>📜 Certifications</h4>
+                            <div>
+                                <span class="certification-badge">🌍 ISO 14001 Lead Auditor</span>
+                                <span class="certification-badge">🌱 WELL AP</span>
+                                <span class="certification-badge">📊 GRI Certified Sustainability</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Volunteering -->
+                        <div class="portfolio-section">
+                            <h4>🤝 Volunteering</h4>
+                            <ul>
+                                <li>Research Advisor - Climate Reality Project (2020-Present)</li>
+                                <li>Board Member - Local Environmental Council (2019-Present)</li>
+                                <li>Science Communicator - Climate Education Programs</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Social Links -->
+                        <div class="social-links">
+                            <a href="#" class="social-link" title="LinkedIn">💼</a>
+                            <a href="#" class="social-link" title="Research Gate">📚</a>
+                            <a href="#" class="social-link" title="Email">📧</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Team Member 5: Aisha Patel - Marketing Manager -->
+                <article class="team-card-detailed">
+                    <div class="team-card-header">
+                        <div class="team-avatar" style="display: flex; align-items: center; justify-content: center; font-size: 3rem; border-radius: 50%;">
+                            👩‍💼
+                        </div>
+                        <h3>Aisha Patel</h3>
+                        <p class="team-role">Marketing Manager</p>
+                    </div>
+                    <div class="team-card-body">
+                        <!-- Technical Skills -->
+                        <div class="portfolio-section">
+                            <h4>🔧 Technical Skills</h4>
+                            <div class="skills-list" style="justify-content: flex-start;">
+                                <span class="skill-tag">Digital Marketing</span>
+                                <span class="skill-tag">SEO/SEM</span>
+                                <span class="skill-tag">Content Strategy</span>
+                                <span class="skill-tag">Social Media</span>
+                                <span class="skill-tag">Email Marketing</span>
+                                <span class="skill-tag">Analytics</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Soft Skills -->
+                        <div class="portfolio-section">
+                            <h4>💡 Soft Skills</h4>
+                            <div class="skills-list" style="justify-content: flex-start;">
+                                <span class="skill-tag">Creative Writing</span>
+                                <span class="skill-tag">Brand Storytelling</span>
+                                <span class="skill-tag">Campaign Management</span>
+                                <span class="skill-tag">Community Building</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Education -->
+                        <div class="portfolio-section">
+                            <h4>🎓 Education</h4>
+                            <ul>
+                                <li><strong>MA, Marketing Communications</strong> - Northwestern University (2018)</li>
+                                <li><strong>BA, Journalism</strong> - University of Missouri (2016)</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Certifications -->
+                        <div class="portfolio-section">
+                            <h4>📜 Certifications</h4>
+                            <div>
+                                <span class="certification-badge">📱 Meta Blueprint</span>
+                                <span class="certification-badge">📊 Google Ads Certified</span>
+                                <span class="certification-badge">📧 HubSpot Inbound Marketing</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Volunteering -->
+                        <div class="portfolio-section">
+                            <h4>🤝 Volunteering</h4>
+                            <ul>
+                                <li>Marketing Consultant - Local Nonprofits (Pro Bono)</li>
+                                <li>Content Creator - Sustainability Awareness Campaigns</li>
+                                <li>Career Mentor - First-Gen College Students</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Social Links -->
+                        <div class="social-links">
+                            <a href="#" class="social-link" title="LinkedIn">💼</a>
+                            <a href="#" class="social-link" title="Instagram">📷</a>
+                            <a href="#" class="social-link" title="Email">📧</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <!-- =================================================================
+         FOOTER
+         ================================================================= -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="logo" style="margin-bottom: 1rem;">
+                        <div class="logo-icon">🌿</div>
+                        <span style="color: white;">EcoMart</span>
+                    </div>
+                    <p>Making sustainable living accessible to everyone.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="products.html">Products</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="about.html">About Us</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Customer Service</h4>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="#">Shipping Info</a>
+                    <a href="#">Returns</a>
+                    <a href="#">FAQ</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <p>📍 123 Green Street, Eco City</p>
+                    <p>📧 hello@ecomart.com</p>
+                    <p>📞 (555) 123-4567</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 EcoMart. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<!--
+=============================================================================
+EcoMart - Contact Page
+Author: EcoMart Team
+Description: Contact page with a functional form that includes JavaScript
+             validation for all fields. Displays contact information and
+             provides multiple ways to reach the EcoMart team.
+=============================================================================
+-->
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact EcoMart - Get in touch with our team for questions about sustainable products, orders, or partnerships.">
+    
+    <!-- Page Title -->
+    <title>Contact Us - EcoMart</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="images/Logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/Logo.png">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Internal CSS for contact page specific styles -->
+    <style>
+        /* Map placeholder styling */
+        .map-container {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, hsl(var(--muted)), hsl(var(--muted) / 0.5));
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            border: 1px solid hsl(var(--border));
+        }
+        
+        .map-placeholder {
+            text-align: center;
+            color: hsl(var(--muted-foreground));
+        }
+        
+        .map-placeholder .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* FAQ section */
+        .faq-section {
+            margin-top: 3rem;
+        }
+        
+        .faq-item {
+            background: hsl(var(--card));
+            border: 1px solid hsl(var(--border));
+            border-radius: var(--radius);
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+        }
+        
+        .faq-question:hover {
+            background: hsl(var(--muted) / 0.5);
+        }
+        
+        .faq-answer {
+            padding: 0 1.5rem 1rem;
+            color: hsl(var(--muted-foreground));
+            display: none;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+        
+        .faq-toggle {
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- =================================================================
+         NAVIGATION BAR
+         ================================================================= -->
+    <nav class="navbar">
+        <div class="container flex-between">
+            <a href="index.html" class="logo">
+                <img src="images/Logo.png" alt="EcoMart logo" class="site-logo">
+                <span>EcoMart</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span>☰</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- =================================================================
+         PAGE HEADER
+         ================================================================= -->
+    <header class="page-header">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Contact</span>
+            </nav>
+            
+            <h1>Contact Us</h1>
+            <p>Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+        </div>
+    </header>
+
+    <!-- =================================================================
+         MAIN CONTENT
+         ================================================================= -->
+    <main class="section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- =================================================================
+                     CONTACT FORM
+                     Form with JavaScript validation
+                     ================================================================= -->
+                <div>
+                    <h2 class="mb-3">Send Us a Message</h2>
+                    
+                    <form id="contact-form" class="contact-form" novalidate>
+                        <!-- Name Field -->
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name" 
+                                placeholder="Enter your full name"
+                                required
+                                minlength="2"
+                                aria-describedby="name-error"
+                            >
+                            <span class="error-message" id="name-error"></span>
+                        </div>
+                        
+                        <!-- Email Field -->
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                placeholder="Enter your email address"
+                                required
+                                aria-describedby="email-error"
+                            >
+                            <span class="error-message" id="email-error"></span>
+                        </div>
+                        
+                        <!-- Phone Field (Optional) -->
+                        <div class="form-group">
+                            <label for="phone">Phone Number (Optional)</label>
+                            <input 
+                                type="tel" 
+                                id="phone" 
+                                name="phone" 
+                                placeholder="Enter your phone number"
+                                aria-describedby="phone-error"
+                            >
+                            <span class="error-message" id="phone-error"></span>
+                        </div>
+                        
+                        <!-- Subject Dropdown -->
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required aria-describedby="subject-error">
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="order">Order Status</option>
+                                <option value="product">Product Question</option>
+                                <option value="returns">Returns & Refunds</option>
+                                <option value="partnership">Partnership Opportunity</option>
+                                <option value="feedback">Feedback</option>
+                            </select>
+                            <span class="error-message" id="subject-error"></span>
+                        </div>
+                        
+                        <!-- Message Field -->
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea 
+                                id="message" 
+                                name="message" 
+                                placeholder="Write your message here..."
+                                required
+                                minlength="10"
+                                aria-describedby="message-error"
+                            ></textarea>
+                            <span class="error-message" id="message-error"></span>
+                        </div>
+                        
+                        <!-- Newsletter Checkbox -->
+                        <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem;">
+                            <input type="checkbox" id="newsletter" name="newsletter" style="width: auto;">
+                            <label for="newsletter" style="margin-bottom: 0;">Subscribe to our newsletter for eco-tips and updates</label>
+                        </div>
+                        
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- =================================================================
+                     CONTACT INFORMATION
+                     Display various contact methods
+                     ================================================================= -->
+                <div class="contact-info">
+                    <h2 class="mb-3">Get in Touch</h2>
+                    
+                    <!-- Address -->
+                    <div class="contact-info-card">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>Visit Us</h4>
+                            <p style="margin: 0;">123 Green Street<br>Eco City, EC 12345<br>United States</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Email -->
+                    <div class="contact-info-card">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h4>Email Us</h4>
+                            <p style="margin: 0;">
+                                General: hello@ecomart.com<br>
+                                Support: support@ecomart.com<br>
+                                Press: press@ecomart.com
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Phone -->
+                    <div class="contact-info-card">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h4>Call Us</h4>
+                            <p style="margin: 0;">
+                                Phone: (555) 123-4567<br>
+                                Toll-Free: 1-800-ECO-MART<br>
+                                Mon-Fri: 9AM - 6PM EST
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Media -->
+                    <div class="contact-info-card">
+                        <div class="contact-icon">🌐</div>
+                        <div>
+                            <h4>Follow Us</h4>
+                            <p style="margin: 0;">
+                                Connect with us on social media for daily eco-tips and product updates.
+                            </p>
+                            <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+                                <a href="#" class="btn btn-outline" style="padding: 0.5rem;">📘 Facebook</a>
+                                <a href="#" class="btn btn-outline" style="padding: 0.5rem;">📸 Instagram</a>
+                                <a href="#" class="btn btn-outline" style="padding: 0.5rem;">🐦 Twitter</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- =================================================================
+                 MAP PLACEHOLDER
+                 ================================================================= -->
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <div class="icon">🗺️</div>
+                    <p>Interactive Map Would Display Here</p>
+                    <p style="font-size: 0.875rem;">123 Green Street, Eco City, EC 12345</p>
+                </div>
+            </div>
+            
+            <!-- =================================================================
+                 FAQ SECTION
+                 Frequently asked questions
+                 ================================================================= -->
+            <section class="faq-section">
+                <h2 class="text-center mb-3">Frequently Asked Questions</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>What is your return policy?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer a 30-day return policy on all unused products in their original packaging. For damaged or defective items, we provide free returns and exchanges. Please contact our support team to initiate a return.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>How long does shipping take?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Standard shipping takes 5-7 business days. Express shipping (2-3 days) is available for an additional fee. All orders are shipped carbon-neutral through our partnership with climate offset programs.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Are your products truly eco-friendly?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Every product in our store is carefully vetted for sustainability. We evaluate materials, manufacturing processes, packaging, and end-of-life disposal. Look for our certification badges on product pages for specific environmental credentials.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Do you ship internationally?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Currently, we ship to the United States, Canada, UK, and EU countries. International shipping typically takes 10-14 business days. We're working to expand our shipping regions while maintaining our carbon-neutral commitment.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>How can I partner with EcoMart?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We're always looking for sustainable brands and creators to partner with. Please fill out the contact form above with "Partnership Opportunity" as the subject, and include details about your brand and products. Our partnerships team will review your submission within 5-7 business days.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- =================================================================
+         FOOTER
+         ================================================================= -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="logo" style="margin-bottom: 1rem;">
+                        <div class="logo-icon">🌿</div>
+                        <span style="color: white;">EcoMart</span>
+                    </div>
+                    <p>Making sustainable living accessible to everyone.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="products.html">Products</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="about.html">About Us</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Customer Service</h4>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="#">Shipping Info</a>
+                    <a href="#">Returns</a>
+                    <a href="#">FAQ</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <p>📍 123 Green Street, Eco City</p>
+                    <p>📧 hello@ecomart.com</p>
+                    <p>📞 (555) 123-4567</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 EcoMart. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    
+    <!-- Inline JavaScript for FAQ Toggle -->
+    <!-- Justification: This small script is specific to the contact page FAQ 
+         section. Using inline JS here keeps the functionality self-contained
+         and reduces unnecessary code loading on other pages. -->
+    <script>
+        /**
+         * Toggle FAQ item visibility
+         * @param {HTMLElement} element - The clicked FAQ question element
+         */
+        function toggleFaq(element) {
+            // Get the parent FAQ item
+            const faqItem = element.parentElement;
+            
+            // Toggle the active class
+            faqItem.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

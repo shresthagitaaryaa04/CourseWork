@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<!--
+=============================================================================
+EcoMart - Products Page
+Author: EcoMart Team
+Description: Product catalog page featuring all sustainable products
+             with filtering, search, and pricing information.
+=============================================================================
+-->
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse EcoMart's collection of sustainable products including bamboo bottles, organic bags, and eco-friendly kitchen items.">
+    <meta name="keywords" content="eco products, sustainable, bamboo, organic, reusable, kitchen, bathroom">
+    
+    <!-- Page Title -->
+    <title>Products - EcoMart Sustainable Products</title>
+    
+    <!-- Google Fonts (Lora + Work Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="images/Logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/Logo.png">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- =================================================================
+         NAVIGATION BAR
+         ================================================================= -->
+    <nav class="navbar">
+        <div class="container flex-between">
+            <a href="index.html" class="logo">
+                <img src="images/Logo.png" alt="EcoMart logo" class="site-logo">
+                <span>EcoMart</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span>☰</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- =================================================================
+         PAGE HEADER
+         ================================================================= -->
+    <header class="page-header">
+        <div class="container">
+            <!-- Breadcrumb Navigation -->
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Products</span>
+            </nav>
+            
+            <h1>Our Products</h1>
+            <p>Discover our curated collection of sustainable lifestyle products designed for eco-conscious living.</p>
+        </div>
+    </header>
+
+    <!-- =================================================================
+         MAIN CONTENT
+         ================================================================= -->
+    <main class="section">
+        <div class="container">
+
+            <!-- PRODUCTS GRID -->
+            <div class="products-grid">
+                <!-- Product 1: Bamboo Water Bottle -->
+                <article class="card product-card" data-category="kitchen">
+                    <div class="card-image" style="background: linear-gradient(135deg, #a8e6cf, #88d8b0); display: flex; align-items: center; justify-content: center; font-size: 4rem; position: relative;">
+                        🍶
+                        <span class="product-badge">-20%</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="product-category">Kitchen</span>
+                        <h3 class="card-title">Bamboo Water Bottle</h3>
+                        <p class="card-description">Double-wall insulated bamboo bottle. Keeps drinks cold for 24 hours or hot for 12 hours. 500ml capacity.</p>
+                        <div class="product-price">
+                            <span class="price-current">$24.99</span>
+                            <span class="price-original">$31.24</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart(1)">Add to Cart</button>
+                    </div>
+                </article>
+
+                <!-- Product 2: Organic Cotton Tote -->
+                <article class="card product-card" data-category="bags">
+                    <div class="card-image" style="background: linear-gradient(135deg, #ffeaa7, #fdcb6e); display: flex; align-items: center; justify-content: center; font-size: 4rem; position: relative;">
+                        👜
+                        <span class="product-badge">-15%</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="product-category">Bags</span>
+                        <h3 class="card-title">Organic Cotton Tote</h3>
+                        <p class="card-description">100% GOTS certified organic cotton shopping bag. Reinforced handles, machine washable. 15L capacity.</p>
+                        <div class="product-price">
+                            <span class="price-current">$18.99</span>
+                            <span class="price-original">$22.34</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart(2)">Add to Cart</button>
+                    </div>
+                </article>
+
+                <!-- Product 3: Beeswax Food Wraps -->
+                <article class="card product-card" data-category="kitchen">
+                    <div class="card-image" style="background: linear-gradient(135deg, #fab1a0, #e17055); display: flex; align-items: center; justify-content: center; font-size: 4rem;">
+                        🐝
+                    </div>
+                    <div class="card-content">
+                        <span class="product-category">Kitchen</span>
+                        <h3 class="card-title">Beeswax Food Wraps</h3>
+                        <p class="card-description">Set of 3 reusable beeswax wraps. Perfect replacement for plastic wrap. Natural antibacterial properties.</p>
+                        <div class="product-price">
+                            <span class="price-current">$16.99</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart(3)">Add to Cart</button>
+                    </div>
+                </article>
+
+                <!-- Product 4: Bamboo Cutlery Set -->
+                <article class="card product-card" data-category="kitchen">
+                    <div class="card-image" style="background: linear-gradient(135deg, #81ecec, #00cec9); display: flex; align-items: center; justify-content: center; font-size: 4rem; position: relative;">
+                        🥢
+                        <span class="product-badge">-25%</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="product-category">Kitchen</span>
+                        <h3 class="card-title">Bamboo Cutlery Set</h3>
+                        <p class="card-description">Portable utensil set with fork, knife, spoon, chopsticks, and straw. Includes cotton carrying pouch.</p>
+                        <div class="product-price">
+                            <span class="price-current">$12.99</span>
+                            <span class="price-original">$17.32</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart(4)">Add to Cart</button>
+                    </div>
+                </article>
+
+                <!-- Product 5: Bamboo Toothbrush Set -->
+                <article class="card product-card" data-category="bathroom">
+                    <div class="card-image" style="background: linear-gradient(135deg, #dfe6e9, #b2bec3); display: flex; align-items: center; justify-content: center; font-size: 4rem;">
+                        🪥
+                    </div>
+                    <div class="card-content">
+                        <span class="product-category">Bathroom</span>
+                        <h3 class="card-title">Bamboo Toothbrush Set</h3>
+                        <p class="card-description">Pack of 4 bamboo toothbrushes with soft BPA-free bristles. Biodegradable handle, plastic-free packaging.</p>
+                        <div class="product-price">
+                            <span class="price-current">$9.99</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart(5)">Add to Cart</button>
+                    </div>
+                </article>
+
+                <!-- Product 6: Reusable Produce Bags -->
+                <article class="card product-card" data-category="bags">
+                    <div class="card-image" style="background: linear-gradient(135deg, #a8e6cf, #55a3ff); display: flex; align-items: center; justify-content: center; font-size: 4rem; position: relative;">
+                        🥬
+                        <span class="product-badge">-10%</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="product-category">Bags</span>
+                        <h3 class="card-title">Reusable Produce Bags</h3>
+                        <p class="card-description">Set of 9 mesh bags in 3 sizes. Perfect for fruits, vegetables, and bulk shopping. Machine washable.</p>
+                        <div class="product-price">
+                            <span class="price-current">$14.99</span>
+                            <span class="price-original">$16.65</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart(6)">Add to Cart</button>
+                    </div>
+                </article>
+
+                <!-- Product 7: Natural Loofah Sponge -->
+                <article class="card product-card" data-category="bathroom">
+                    <div class="card-image" style="background: linear-gradient(135deg, #ffeaa7, #fab1a0); display: flex; align-items: center; justify-content: center; font-size: 4rem;">
+                        🧽
+                    </div>
+                    <div class="card-content">
+                        <span class="product-category">Bathroom</span>
+                        <h3 class="card-title">Natural Loofah Sponge</h3>
+                        <p class="card-description">3-pack of 100% natural loofah sponges. Exfoliating, antibacterial, and fully compostable.</p>
+                        <div class="product-price">
+                            <span class="price-current">$8.99</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart(7)">Add to Cart</button>
+                    </div>
+                </article>
+
+                <!-- Product 8: Stainless Steel Straws -->
+                <article class="card product-card" data-category="kitchen">
+                    <div class="card-image" style="background: linear-gradient(135deg, #74b9ff, #0984e3); display: flex; align-items: center; justify-content: center; font-size: 4rem;">
+                        🥤
+                    </div>
+                    <div class="card-content">
+                        <span class="product-category">Kitchen</span>
+                        <h3 class="card-title">Stainless Steel Straws</h3>
+                        <p class="card-description">8-piece set with 4 straight, 4 bent straws, 2 cleaning brushes. Food-grade stainless steel, reusable forever.</p>
+                        <div class="product-price">
+                            <span class="price-current">$11.99</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart(8)">Add to Cart</button>
+                    </div>
+                </article>
+
+                <!-- Product 9: Organic Cotton Makeup Pads -->
+                <article class="card product-card" data-category="bathroom">
+                    <div class="card-image" style="background: linear-gradient(135deg, #fd79a8, #e84393); display: flex; align-items: center; justify-content: center; font-size: 4rem; position: relative;">
+                        🧴
+                        <span class="product-badge">-30%</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="product-category">Bathroom</span>
+                        <h3 class="card-title">Reusable Makeup Pads</h3>
+                        <p class="card-description">16-pack organic bamboo cotton rounds with laundry bag. Soft, durable, replaces 1000+ disposable pads.</p>
+                        <div class="product-price">
+                            <span class="price-current">$13.99</span>
+                            <span class="price-original">$19.99</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart(9)">Add to Cart</button>
+                    </div>
+                </article>
+
+                <!-- Product 10: Coconut Bowl Set -->
+                <article class="card product-card" data-category="kitchen">
+                    <div class="card-image" style="background: linear-gradient(135deg, #dfe6e9, #636e72); display: flex; align-items: center; justify-content: center; font-size: 4rem;">
+                        🥥
+                    </div>
+                    <div class="card-content">
+                        <span class="product-category">Kitchen</span>
+                        <h3 class="card-title">Coconut Bowl Set</h3>
+                        <p class="card-description">Set of 2 handcrafted coconut bowls with bamboo spoons. Perfect for smoothie bowls, salads, and more.</p>
+                        <div class="product-price">
+                            <span class="price-current">$22.99</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart(10)">Add to Cart</button>
+                    </div>
+                </article>
+
+                <!-- Product 11: Wool Dryer Balls -->
+                <article class="card product-card" data-category="home">
+                    <div class="card-image" style="background: linear-gradient(135deg, #a29bfe, #6c5ce7); display: flex; align-items: center; justify-content: center; font-size: 4rem; position: relative;">
+                        🧶
+                        <span class="product-badge">-20%</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="product-category">Home</span>
+                        <h3 class="card-title">Wool Dryer Balls</h3>
+                        <p class="card-description">6-pack New Zealand wool dryer balls. Reduce drying time by 25%, naturally soften clothes, last 1000+ loads.</p>
+                        <div class="product-price">
+                            <span class="price-current">$19.99</span>
+                            <span class="price-original">$24.99</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart(11)">Add to Cart</button>
+                    </div>
+                </article>
+
+                <!-- Product 12: Hemp Backpack -->
+                <article class="card product-card" data-category="bags">
+                    <div class="card-image" style="background: linear-gradient(135deg, #00b894, #00cec9); display: flex; align-items: center; justify-content: center; font-size: 4rem;">
+                        🎒
+                    </div>
+                    <div class="card-content">
+                        <span class="product-category">Bags</span>
+                        <h3 class="card-title">Hemp Backpack</h3>
+                        <p class="card-description">Handcrafted hemp backpack with laptop compartment. Durable, water-resistant, fair trade certified.</p>
+                        <div class="product-price">
+                            <span class="price-current">$59.99</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart(12)">Add to Cart</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <!-- =================================================================
+         FOOTER
+         ================================================================= -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="logo" style="margin-bottom: 1rem;">
+                        <div class="logo-icon">🌿</div>
+                        <span style="color: white;">EcoMart</span>
+                    </div>
+                    <p>Making sustainable living accessible to everyone.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="products.html">Products</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="about.html">About Us</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Customer Service</h4>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="#">Shipping Info</a>
+                    <a href="#">Returns</a>
+                    <a href="#">FAQ</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <p>📍 123 Green Street, Eco City</p>
+                    <p>📧 hello@ecomart.com</p>
+                    <p>📞 (555) 123-4567</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 EcoMart. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<!--
+=============================================================================
+EcoMart - Blog Page
+Author: EcoMart Team
+Description: Blog page featuring articles about technology's impact on
+             daily life and business, focusing on sustainability.
+=============================================================================
+-->
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EcoMart blog - Articles about sustainable living, technology's impact on daily life, and eco-friendly business practices.">
+    
+    <!-- Page Title -->
+    <title>Blog - EcoMart Sustainable Living</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="images/Logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/Logo.png">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Internal CSS for blog-specific styles -->
+    <!-- Justification: These styles are specific to the blog page and 
+         enhance article readability. Using internal CSS keeps blog-specific
+         styles organized while reducing external file dependencies. -->
+    <style>
+        /* Featured article styling */
+        .featured-article {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            background: hsl(var(--card));
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid hsl(var(--border));
+        }
+        
+        .featured-article .article-image {
+            height: 100%;
+            min-height: 400px;
+            background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+        }
+        
+        .featured-article .article-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .featured-badge {
+            display: inline-block;
+            background: hsl(var(--secondary));
+            color: hsl(var(--secondary-foreground));
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        /* Article content styling */
+        .article-full {
+            background: hsl(var(--card));
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            margin-bottom: 2rem;
+            border: 1px solid hsl(var(--border));
+        }
+        
+        .article-full h3 {
+            margin-bottom: 1rem;
+            color: hsl(var(--foreground));
+        }
+        
+        .article-full p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        .article-full ul {
+            margin: 1rem 0 1rem 2rem;
+            color: hsl(var(--muted-foreground));
+        }
+        
+        .article-full li {
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .featured-article {
+                grid-template-columns: 1fr;
+            }
+            
+            .featured-article .article-image {
+                min-height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- =================================================================
+         NAVIGATION BAR
+         ================================================================= -->
+    <nav class="navbar">
+        <div class="container flex-between">
+            <a href="index.html" class="logo">
+                <img src="images/Logo.png" alt="EcoMart logo" class="site-logo">
+                <span>EcoMart</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span>☰</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- =================================================================
+         PAGE HEADER
+         ================================================================= -->
+    <header class="page-header">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Blog</span>
+            </nav>
+            
+            <h1>Our Blog</h1>
+            <p>Insights on sustainable living, technology's impact on our lives, and eco-friendly business practices.</p>
+        </div>
+    </header>
+
+    <!-- =================================================================
+         MAIN CONTENT
+         ================================================================= -->
+    <main class="section">
+        <div class="container">
+            <!-- =================================================================
+                 FEATURED ARTICLE
+                 Main highlighted article about technology impact
+                 ================================================================= -->
+            <article class="featured-article">
+                <div class="article-image">📱🌍</div>
+                <div class="article-content">
+                    <span class="featured-badge">⭐ Featured Article</span>
+                    <div class="blog-meta">
+                        <span class="blog-tag">Technology & Life</span>
+                        <span>December 20, 2024</span>
+                    </div>
+                    <h2>How Technology Has Transformed Our Daily Lives and Business</h2>
+                    <p>From smart homes to sustainable supply chains, technology is reshaping how we live and work. Discover the profound impact of digital innovation on sustainability and modern life.</p>
+                    <a href="#article-technology" class="btn btn-primary">Read Full Article</a>
+                </div>
+            </article>
+
+            <!-- =================================================================
+                 ARTICLE 1: Technology Impact on Daily Life
+                 Detailed article about technology's effect on daily activities
+                 ================================================================= -->
+            <article class="article-full" id="article-technology">
+                <div class="blog-meta mb-2">
+                    <span class="blog-tag">Technology</span>
+                    <span>December 20, 2024</span>
+                    <span>• 10 min read</span>
+                </div>
+                
+                <h2>The Digital Revolution: Technology's Impact on Daily Life and Business</h2>
+                
+                <h3>Introduction</h3>
+                <p>Technology has fundamentally transformed every aspect of our lives. From the moment we wake up to smart alarms that optimize our sleep cycles, to the way we shop, work, and communicate, digital innovation has become inseparable from modern existence. This article explores how technology affects our daily routines and how businesses have adapted to this new reality.</p>
+                
+                <h3>Technology in Our Daily Lives</h3>
+                
+                <h4>1. Smart Home Revolution</h4>
+                <p>Our homes have become intelligent ecosystems. Smart thermostats like Nest learn our preferences and reduce energy consumption by up to 15%. Smart lighting systems adjust based on natural light and our circadian rhythms. Voice assistants help us manage tasks, play music, and control our environments with simple commands.</p>
+                <ul>
+                    <li><strong>Energy Efficiency:</strong> Smart devices can reduce household energy consumption by 10-25%</li>
+                    <li><strong>Convenience:</strong> Automated routines save an average of 30 minutes per day</li>
+                    <li><strong>Security:</strong> Smart locks and cameras provide 24/7 monitoring and peace of mind</li>
+                </ul>
+                
+                <h4>2. Digital Communication</h4>
+                <p>The way we connect has been revolutionized. Video calls have replaced many in-person meetings. Social media keeps us connected across continents. Instant messaging has made communication instantaneous and continuous. During the pandemic, these technologies proved essential for maintaining both personal and professional relationships.</p>
+                
+                <h4>3. E-commerce and Online Shopping</h4>
+                <p>Traditional retail has been transformed by online shopping. Consumers can compare prices, read reviews, and make purchases from anywhere. This shift has enabled sustainable shopping by providing access to eco-friendly products that may not be available locally. Companies like EcoMart can reach environmentally-conscious consumers worldwide.</p>
+                
+                <h3>Technology in Business</h3>
+                
+                <h4>1. Remote Work Revolution</h4>
+                <p>The ability to work from anywhere has changed business operations fundamentally. Companies have discovered that remote work can increase productivity while reducing overhead costs and carbon emissions from commuting. Cloud computing enables seamless collaboration across time zones.</p>
+                <ul>
+                    <li><strong>Productivity:</strong> Studies show remote workers are 13% more productive</li>
+                    <li><strong>Cost Savings:</strong> Companies save an average of $11,000 per remote worker annually</li>
+                    <li><strong>Environmental Impact:</strong> Remote work reduces carbon emissions by eliminating commutes</li>
+                </ul>
+                
+                <h4>2. Sustainable Supply Chains</h4>
+                <p>Technology enables businesses to track their environmental impact throughout the supply chain. Blockchain provides transparency in sourcing. AI optimizes logistics to reduce fuel consumption. IoT sensors monitor conditions to reduce waste. These innovations help companies like EcoMart ensure their products are truly sustainable from source to delivery.</p>
+                
+                <h4>3. Data-Driven Decision Making</h4>
+                <p>Analytics and machine learning help businesses understand customer needs and optimize operations. Predictive analytics reduce waste by improving inventory management. Customer data enables personalized experiences while respecting privacy.</p>
+                
+                <h3>The Environmental Dimension</h3>
+                <p>Technology plays a crucial role in addressing environmental challenges:</p>
+                <ul>
+                    <li><strong>Renewable Energy:</strong> Smart grids optimize renewable energy distribution</li>
+                    <li><strong>Waste Reduction:</strong> Apps connect consumers with surplus food and products</li>
+                    <li><strong>Carbon Tracking:</strong> Tools help individuals and businesses measure and reduce their footprint</li>
+                    <li><strong>Sustainable Choices:</strong> Online platforms make eco-friendly products accessible to everyone</li>
+                </ul>
+                
+                <h3>Conclusion</h3>
+                <p>Technology is neither inherently good nor bad—its impact depends on how we choose to use it. By embracing innovations that enhance sustainability, improve efficiency, and connect us meaningfully, we can harness technology's power to create a better future for both people and planet. At EcoMart, we leverage these technologies to make sustainable living accessible, convenient, and impactful.</p>
+            </article>
+
+            <!-- =================================================================
+                 BLOG GRID
+                 Additional articles displayed in grid format
+                 ================================================================= -->
+            <h2 class="mb-3">More Articles</h2>
+            
+            <div class="blog-grid">
+                <!-- Article: Sustainable Business -->
+                <article class="card blog-card">
+                    <div class="card-image" style="background: linear-gradient(135deg, #00b894, #00cec9); display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+                        🏢
+                    </div>
+                    <div class="card-content">
+                        <div class="blog-meta">
+                            <span class="blog-tag">Business</span>
+                            <span>Dec 15, 2024</span>
+                        </div>
+                        <h3 class="card-title">The Rise of B-Corps: Business as a Force for Good</h3>
+                        <p class="card-description">How certified B Corporations are proving that profit and purpose can coexist, creating a new model for sustainable business.</p>
+                        <a href="#" class="btn btn-outline">Read More</a>
+                    </div>
+                </article>
+
+                <!-- Article: Zero Waste Living -->
+                <article class="card blog-card">
+                    <div class="card-image" style="background: linear-gradient(135deg, #a8e6cf, #88d8b0); display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+                        ♻️
+                    </div>
+                    <div class="card-content">
+                        <div class="blog-meta">
+                            <span class="blog-tag">Lifestyle</span>
+                            <span>Dec 10, 2024</span>
+                        </div>
+                        <h3 class="card-title">Zero Waste Living: A Beginner's Guide</h3>
+                        <p class="card-description">Practical tips and strategies for reducing waste in your daily life, from kitchen swaps to bathroom essentials.</p>
+                        <a href="#" class="btn btn-outline">Read More</a>
+                    </div>
+                </article>
+
+                <!-- Article: Eco Home Office -->
+                <article class="card blog-card">
+                    <div class="card-image" style="background: linear-gradient(135deg, #ffeaa7, #fdcb6e); display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+                        🏠
+                    </div>
+                    <div class="card-content">
+                        <div class="blog-meta">
+                            <span class="blog-tag">Work</span>
+                            <span>Dec 5, 2024</span>
+                        </div>
+                        <h3 class="card-title">Creating an Eco-Friendly Home Office</h3>
+                        <p class="card-description">Tips for setting up a sustainable and productive workspace at home, including furniture, supplies, and energy use.</p>
+                        <a href="#" class="btn btn-outline">Read More</a>
+                    </div>
+                </article>
+
+                <!-- Article: Circular Economy -->
+                <article class="card blog-card">
+                    <div class="card-image" style="background: linear-gradient(135deg, #74b9ff, #0984e3); display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+                        🔄
+                    </div>
+                    <div class="card-content">
+                        <div class="blog-meta">
+                            <span class="blog-tag">Economy</span>
+                            <span>Nov 28, 2024</span>
+                        </div>
+                        <h3 class="card-title">Understanding the Circular Economy</h3>
+                        <p class="card-description">How the circular economy model is transforming industries and creating sustainable business opportunities.</p>
+                        <a href="#" class="btn btn-outline">Read More</a>
+                    </div>
+                </article>
+
+                <!-- Article: AI and Sustainability -->
+                <article class="card blog-card">
+                    <div class="card-image" style="background: linear-gradient(135deg, #a29bfe, #6c5ce7); display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+                        🤖
+                    </div>
+                    <div class="card-content">
+                        <div class="blog-meta">
+                            <span class="blog-tag">Technology</span>
+                            <span>Nov 20, 2024</span>
+                        </div>
+                        <h3 class="card-title">AI for Sustainability: The Future is Here</h3>
+                        <p class="card-description">How artificial intelligence is being used to tackle climate change, optimize resources, and predict environmental trends.</p>
+                        <a href="#" class="btn btn-outline">Read More</a>
+                    </div>
+                </article>
+
+                <!-- Article: Sustainable Fashion -->
+                <article class="card blog-card">
+                    <div class="card-image" style="background: linear-gradient(135deg, #fd79a8, #e84393); display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+                        👕
+                    </div>
+                    <div class="card-content">
+                        <div class="blog-meta">
+                            <span class="blog-tag">Fashion</span>
+                            <span>Nov 15, 2024</span>
+                        </div>
+                        <h3 class="card-title">The True Cost of Fast Fashion</h3>
+                        <p class="card-description">Exploring the environmental and social impacts of fast fashion and how to make more sustainable clothing choices.</p>
+                        <a href="#" class="btn btn-outline">Read More</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <!-- =================================================================
+         FOOTER
+         ================================================================= -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="logo" style="margin-bottom: 1rem;">
+                        <div class="logo-icon">🌿</div>
+                        <span style="color: white;">EcoMart</span>
+                    </div>
+                    <p>Making sustainable living accessible to everyone.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="products.html">Products</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="about.html">About Us</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Customer Service</h4>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="#">Shipping Info</a>
+                    <a href="#">Returns</a>
+                    <a href="#">FAQ</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <p>📍 123 Green Street, Eco City</p>
+                    <p>📧 hello@ecomart.com</p>
+                    <p>📞 (555) 123-4567</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 EcoMart. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

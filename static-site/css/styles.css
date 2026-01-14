@@ -1,0 +1,1012 @@
+:root {
+  /* Primary Colors - Green theme for eco-friendly branding */
+  --primary: 142 71% 35%;
+  --primary-foreground: 0 0% 100%;
+  
+  /* Secondary Colors */
+  --secondary: 45 93% 47%;
+  --secondary-foreground: 0 0% 10%;
+  
+  /* Background Colors */
+  --background: 60 30% 98%;
+  --foreground: 150 10% 15%;
+  
+  /* Card and Surface Colors */
+  --card: 0 0% 100%;
+  --card-foreground: 150 10% 15%;
+  
+  /* Muted Colors for subtle elements */
+  --muted: 60 20% 93%;
+  --muted-foreground: 150 5% 45%;
+  
+  /* Border and Input Colors */
+  --border: 60 15% 85%;
+  --input: 60 15% 85%;
+  
+  /* Accent Colors */
+  --accent: 142 50% 45%;
+  --accent-foreground: 0 0% 100%;
+  
+  /* Status Colors */
+  --destructive: 0 84% 60%;
+  --success: 142 71% 35%;
+  
+  /* Typography - use Work Sans for the whole site (single font) */
+  --font-display: 'Work Sans', sans-serif;
+  --font-body: 'Work Sans', sans-serif;
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  
+  /* Border Radius */
+  --radius: 0.75rem;
+  --radius-sm: 0.5rem;
+  --radius-lg: 1rem;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* =============================================================================
+   CSS RESET AND BASE STYLES
+   Normalize browser defaults for consistent rendering
+   ============================================================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* =============================================================================
+   TYPOGRAPHY STYLES
+   Headings, paragraphs, and text utilities
+   ============================================================================= */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.2;
+  color: hsl(var(--foreground));
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.25rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+
+p {
+  margin-bottom: var(--spacing-md);
+  color: hsl(var(--muted-foreground));
+}
+
+a {
+  color: hsl(var(--primary));
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: hsl(var(--accent));
+}
+
+/* =============================================================================
+   LAYOUT UTILITIES
+   Container, flexbox, and grid utilities
+   ============================================================================= */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.section {
+  padding: var(--spacing-2xl) 0;
+}
+
+.grid {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* =============================================================================
+   NAVIGATION STYLES
+   Header and navigation bar styling
+   ============================================================================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #ffffff; 
+  backdrop-filter: none;
+  border-bottom: 1px solid hsl(var(--border));
+  padding: var(--spacing-md) 0;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo Styling */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: hsl(var(--primary));
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.25rem;
+}
+
+/* Logo image used in header */
+.site-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 6px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  /* reduced spacing between nav items */
+  gap: var(--spacing-sm);
+  list-style: none;
+}
+
+.nav-links a {
+  color: hsl(var(--foreground));
+  font-weight: 500;
+  /* further reduced internal padding for denser nav */
+  padding: 0.125rem 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: hsl(var(--primary));
+  background-color: hsl(var(--primary) / 0.1);
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: hsl(var(--foreground));
+}
+
+/* =============================================================================
+   BUTTON STYLES
+   Primary, secondary, and outline button variants
+   ============================================================================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+.btn-primary:hover {
+  background-color: hsl(var(--accent));
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background-color: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+}
+
+.btn-secondary:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid hsl(var(--primary));
+  color: hsl(var(--primary));
+}
+
+.btn-outline:hover {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+.btn-lg {
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-size: 1.125rem;
+}
+
+/* =============================================================================
+   CARD STYLES
+   Product cards, blog cards, and general card components
+   ============================================================================= */
+.card {
+  background-color: hsl(var(--card));
+  border-radius: var(--radius-lg);
+  border: 1px solid hsl(var(--border));
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background-color: hsl(var(--muted));
+}
+
+.card-content {
+  padding: var(--spacing-lg);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-sm);
+  color: hsl(var(--foreground));
+}
+
+.card-description {
+  color: hsl(var(--muted-foreground));
+  font-size: 0.875rem;
+  margin-bottom: var(--spacing-md);
+}
+
+/* =============================================================================
+   HERO SECTION STYLES
+   Large banner section for homepage
+   ============================================================================= */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  /* Removed green gradient overlay so the hero shows only the background image */
+  background: url('../images/hero-bg.jpg') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding-top: 80px;
+}
+
+/* Dark overlay to improve text contrast against the background image */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.45));
+  z-index: 0;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1,
+.hero p {
+  text-shadow: 0 2px 8px rgba(0,0,0,0.45);
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  color: white;
+  margin-bottom: var(--spacing-lg);
+  animation: fadeInUp 0.8s ease;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: var(--spacing-xl);
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+/* =============================================================================
+   PRODUCT SECTION STYLES
+   Product grid and pricing display
+   ============================================================================= */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.product-card .card-image {
+  height: 250px;
+  position: relative;
+}
+
+/* Product Badge for discounts */
+.product-badge {
+  position: absolute;
+  top: var(--spacing-md);
+  left: var(--spacing-md);
+  background-color: hsl(var(--destructive));
+  color: white;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Product Pricing */
+.product-price {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.price-current {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: hsl(var(--primary));
+}
+
+.price-original {
+  font-size: 1rem;
+  color: hsl(var(--muted-foreground));
+  text-decoration: line-through;
+}
+
+/* Product Category Tag */
+.product-category {
+  display: inline-block;
+  background-color: hsl(var(--primary) / 0.1);
+  color: hsl(var(--primary));
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* =============================================================================
+   BLOG SECTION STYLES
+   Blog post cards and article styling
+   ============================================================================= */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.blog-card .card-image {
+  height: 200px;
+}
+
+.blog-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: var(--spacing-sm);
+}
+
+.blog-tag {
+  background-color: hsl(var(--secondary) / 0.2);
+  color: hsl(var(--secondary-foreground));
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* =============================================================================
+   RESEARCH SECTION STYLES
+   Comparison tables and reference styling
+   ============================================================================= */
+.research-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--spacing-xl) 0;
+  background-color: hsl(var(--card));
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.research-table th,
+.research-table td {
+  padding: var(--spacing-md);
+  text-align: left;
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.research-table th {
+  background-color: hsl(var(--primary));
+  color: white;
+  font-weight: 600;
+}
+
+.research-table tr:hover {
+  background-color: hsl(var(--muted) / 0.5);
+}
+
+.research-table .check {
+  color: hsl(var(--success));
+  font-weight: bold;
+}
+
+.research-table .cross {
+  color: hsl(var(--destructive));
+}
+
+/* =============================================================================
+   ABOUT SECTION STYLES
+   Team member cards and portfolio display
+   ============================================================================= */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.team-card {
+  text-align: center;
+  padding: var(--spacing-xl);
+}
+
+.team-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0 auto var(--spacing-lg);
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: white;
+}
+
+.team-name {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+.team-role {
+  color: hsl(var(--primary));
+  font-weight: 500;
+  margin-bottom: var(--spacing-md);
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  justify-content: center;
+  margin-top: var(--spacing-md);
+}
+
+.skill-tag {
+  background-color: hsl(var(--primary) / 0.1);
+  color: hsl(var(--primary));
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* =============================================================================
+   CONTACT SECTION STYLES
+   Form styling and contact information
+   ============================================================================= */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-2xl);
+}
+
+.contact-form {
+  background-color: hsl(var(--card));
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  border: 1px solid hsl(var(--border));
+}
+
+.form-group {
+  margin-bottom: var(--spacing-lg);
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+  color: hsl(var(--foreground));
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: var(--spacing-md);
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-family: var(--font-body);
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: hsl(var(--primary));
+  box-shadow: 0 0 0 3px hsl(var(--primary) / 0.1);
+}
+
+.form-group textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/* Form Error Styling */
+.form-group.error input,
+.form-group.error textarea {
+  border-color: hsl(var(--destructive));
+}
+
+.error-message {
+  color: hsl(var(--destructive));
+  font-size: 0.875rem;
+  margin-top: var(--spacing-xs);
+  display: none;
+}
+
+.form-group.error .error-message {
+  display: block;
+}
+
+/* Contact Information Cards */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.contact-info-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background-color: hsl(var(--card));
+  border-radius: var(--radius-lg);
+  border: 1px solid hsl(var(--border));
+}
+
+.contact-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+/* =============================================================================
+   FOOTER STYLES
+   Site footer with multiple columns
+   ============================================================================= */
+.footer {
+  background-color: hsl(150 10% 15%);
+  color: white;
+  padding: var(--spacing-2xl) 0 var(--spacing-lg);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+.footer-column h4 {
+  color: white;
+  margin-bottom: var(--spacing-md);
+}
+
+.footer-column p,
+.footer-column a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+  margin-bottom: var(--spacing-sm);
+  display: block;
+}
+
+.footer-column a:hover {
+  color: hsl(var(--secondary));
+}
+
+.footer-bottom {
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.875rem;
+}
+
+/* =============================================================================
+   PAGE HEADER STYLES
+   Common header for internal pages
+   ============================================================================= */
+.page-header {
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+  color: white;
+  padding: 150px 0 80px;
+  text-align: center;
+}
+
+.page-header h1 {
+  color: white;
+  margin-bottom: var(--spacing-md);
+}
+
+.page-header p {
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+  font-size: 0.875rem;
+}
+
+.breadcrumb a {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.breadcrumb a:hover {
+  color: white;
+}
+
+.breadcrumb span {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* =============================================================================
+   FILTER AND SEARCH STYLES
+   Product filtering and search components
+   ============================================================================= */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background-color: hsl(var(--card));
+  border-radius: var(--radius-lg);
+  border: 1px solid hsl(var(--border));
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex: 1;
+  max-width: 400px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  font-size: 1rem;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: transparent;
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: hsl(var(--primary));
+  color: white;
+  border-color: hsl(var(--primary));
+}
+
+/* =============================================================================
+   UTILITY CLASSES
+   Common utility classes for spacing, text, etc.
+   ============================================================================= */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-primary { color: hsl(var(--primary)); }
+.text-muted { color: hsl(var(--muted-foreground)); }
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: var(--spacing-sm); }
+.mb-2 { margin-bottom: var(--spacing-md); }
+.mb-3 { margin-bottom: var(--spacing-lg); }
+.mb-4 { margin-bottom: var(--spacing-xl); }
+
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: var(--spacing-sm); }
+.mt-2 { margin-top: var(--spacing-md); }
+.mt-3 { margin-top: var(--spacing-lg); }
+.mt-4 { margin-top: var(--spacing-xl); }
+
+.hidden { display: none; }
+
+/* =============================================================================
+   ANIMATIONS
+   Keyframe animations and transitions
+   ============================================================================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease;
+}
+
+/* =============================================================================
+   TOAST/NOTIFICATION STYLES
+   Success and error message display
+   ============================================================================= */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius);
+  color: white;
+  font-weight: 500;
+  z-index: 9999;
+  animation: slideIn 0.3s ease;
+  display: none;
+}
+
+.toast.show {
+  display: block;
+}
+
+.toast.success {
+  background-color: hsl(var(--success));
+}
+
+.toast.error {
+  background-color: hsl(var(--destructive));
+}
+
+/* =============================================================================
+   RESPONSIVE DESIGN - MEDIA QUERIES
+   Adjustments for different screen sizes
+   ============================================================================= */
+
+/* Tablet devices (768px and below) */
+@media (max-width: 768px) {
+  /* Typography adjustments */
+  h1 { font-size: 2.25rem; }
+  h2 { font-size: 1.75rem; }
+  
+  /* Navigation - Mobile Menu */
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: hsl(var(--background));
+    flex-direction: column;
+    padding: var(--spacing-lg);
+    gap: var(--spacing-md);
+    border-bottom: 1px solid hsl(var(--border));
+    display: none;
+  }
+  
+  .nav-links.active {
+    display: flex;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  /* Hero adjustments */
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+  }
+  
+  /* Grid adjustments */
+  .contact-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .team-grid,
+  .products-grid,
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Filter bar */
+  .filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .search-box {
+    max-width: 100%;
+  }
+}
+
+/* Mobile devices (480px and below) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+  
+  .section {
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .page-header {
+    padding: 120px 0 60px;
+  }
+  
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .research-table {
+    font-size: 0.875rem;
+  }
+  
+  .research-table th,
+  .research-table td {
+    padding: var(--spacing-sm);
+  }
+}

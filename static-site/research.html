@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<!--
+=============================================================================
+EcoMart - Research Page
+Author: EcoMart Team
+Description: Research page comparing EcoMart's web components against
+             5 reference e-commerce websites, analyzing features and
+             design patterns.
+=============================================================================
+-->
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Research analysis comparing EcoMart's website features against leading e-commerce platforms.">
+    
+    <!-- Page Title -->
+    <title>Research - EcoMart Website Analysis</title>
+    
+    <!-- Google Fonts (Lora + Work Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="images/Logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/Logo.png">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Internal CSS for research page specific styles -->
+    <style>
+        /* Reference website cards */
+        .reference-card {
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .reference-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .reference-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            background: hsl(var(--primary));
+            color: white;
+            border-radius: 50%;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        
+        /* Comparison highlights */
+        .highlight-box {
+            background: hsl(var(--primary) / 0.1);
+            border-left: 4px solid hsl(var(--primary));
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+        
+        /* Feature list */
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            background: hsl(var(--muted));
+            border-radius: var(--radius-sm);
+        }
+        
+        .feature-item.has {
+            background: hsl(var(--success) / 0.1);
+            color: hsl(var(--success));
+        }
+        
+        .feature-item.missing {
+            background: hsl(var(--destructive) / 0.1);
+            color: hsl(var(--destructive));
+        }
+        
+        /* Summary cards */
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .summary-card {
+            background: hsl(var(--card));
+            padding: 1.5rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid hsl(var(--border));
+            text-align: center;
+        }
+        
+        .summary-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- =================================================================
+         NAVIGATION BAR
+         ================================================================= -->
+    <nav class="navbar">
+        <div class="container flex-between">
+            <a href="index.html" class="logo">
+                <img src="images/Logo.png" alt="EcoMart logo" class="site-logo">
+                <span>EcoMart</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="research.html" class="active">Research</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span>☰</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- =================================================================
+         PAGE HEADER
+         ================================================================= -->
+    <header class="page-header">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Research</span>
+            </nav>
+            
+            <h1>Website Research & Analysis</h1>
+            <p>Comparative analysis of web components used in EcoMart against 5 leading e-commerce reference websites.</p>
+        </div>
+    </header>
+
+    <!-- =================================================================
+         MAIN CONTENT
+         ================================================================= -->
+    <main class="section">
+        <div class="container">
+            <!-- =================================================================
+                 INTRODUCTION
+                 ================================================================= -->
+            <div class="article-full">
+                <h2>Research Methodology</h2>
+                <p>This research analyzes the web components and features of EcoMart compared to five established e-commerce websites. We evaluated each site based on user experience, technical implementation, accessibility, and unique features that differentiate them in the market.</p>
+                
+                <div class="highlight-box">
+                    <strong>Research Objectives:</strong>
+                    <ul style="margin: 0.5rem 0 0 1.5rem;">
+                        <li>Identify industry-standard e-commerce components</li>
+                        <li>Analyze unique features that enhance user experience</li>
+                        <li>Compare implementation approaches</li>
+                        <li>Document best practices for sustainable e-commerce</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- =================================================================
+                 FEATURE COMPARISON TABLE
+                 Comprehensive comparison of all websites
+                 ================================================================= -->
+            <h2 class="mb-3">Feature Comparison Matrix</h2>
+            
+            <div style="overflow-x: auto;">
+                <table class="research-table">
+                    <thead>
+                        <tr>
+                            <th>Feature / Component</th>
+                            <th>EcoMart</th>
+                            <th>Patagonia</th>
+                            <th>Etsy</th>
+                            <th>Package Free</th>
+                            <th>Tentree</th>
+                            <th>Grove Collab.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Navigation Features -->
+                        <tr>
+                            <td><strong>Responsive Navigation</strong></td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mega Menu</strong></td>
+                            <td class="cross">✗</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="cross">✗</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sticky Header</strong></td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                        </tr>
+                        <!-- Product Features -->
+                        <tr>
+                            <td><strong>Product Filtering</strong></td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Product Search</strong></td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Price Comparison Display</strong></td>
+                            <td class="check">✓</td>
+                            <td class="cross">✗</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Product Quick View</strong></td>
+                            <td class="cross">✗</td>
+                            <td class="check">✓</td>
+                            <td class="cross">✗</td>
+                            <td class="cross">✗</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                        </tr>
+                        <!-- Sustainability Features -->
+                        <tr>
+                            <td><strong>Sustainability Info</strong></td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Impact Tracker</strong></td>
+                            <td class="cross">✗</td>
+                            <td class="check">✓</td>
+                            <td class="cross">✗</td>
+                            <td class="cross">✗</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Carbon Neutral Shipping</strong></td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="cross">✗</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                        </tr>
+                        <!-- User Experience -->
+                        <tr>
+                            <td><strong>Contact Form</strong></td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Newsletter Signup</strong></td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Blog/Content</strong></td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                        </tr>
+                        <tr>
+                            <td><strong>About/Team Page</strong></td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                        </tr>
+                        <!-- Technical Features -->
+                        <tr>
+                            <td><strong>Form Validation</strong></td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Animations</strong></td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="cross">✗</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mobile Responsive</strong></td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- =================================================================
+                 REFERENCE WEBSITES ANALYSIS
+                 Detailed analysis of each reference website
+                 ================================================================= -->
+            <h2 class="mt-4 mb-3">Reference Website Analysis</h2>
+
+            <!-- Reference 1: Patagonia -->
+            <div class="card reference-card">
+                <h3><span class="reference-number">1</span> Patagonia (patagonia.com)</h3>
+                <p class="text-muted">Outdoor clothing and gear company known for environmental activism</p>
+                
+                <h4>Unique Components Observed:</h4>
+                <div class="feature-list">
+                    <div class="feature-item has">✓ Worn Wear Program</div>
+                    <div class="feature-item has">✓ Environmental Impact Calculator</div>
+                    <div class="feature-item has">✓ Repair & Reuse Section</div>
+                    <div class="feature-item has">✓ Activism Hub</div>
+                    <div class="feature-item has">✓ Supply Chain Transparency</div>
+                    <div class="feature-item has">✓ Film/Documentary Section</div>
+                </div>
+                
+                <div class="highlight-box">
+                    <strong>Key Differentiator:</strong> Patagonia's website integrates activism and environmental education directly into the shopping experience. Their "Worn Wear" section encourages buying used products, demonstrating commitment to sustainability over sales.
+                </div>
+            </div>
+
+            <!-- Reference 2: Etsy -->
+            <div class="card reference-card">
+                <h3><span class="reference-number">2</span> Etsy (etsy.com)</h3>
+                <p class="text-muted">Global marketplace for handmade, vintage, and unique goods</p>
+                
+                <h4>Unique Components Observed:</h4>
+                <div class="feature-list">
+                    <div class="feature-item has">✓ Seller Stories</div>
+                    <div class="feature-item has">✓ Advanced Filters</div>
+                    <div class="feature-item has">✓ Gift Mode</div>
+                    <div class="feature-item has">✓ Favoriting System</div>
+                    <div class="feature-item has">✓ Personalization Options</div>
+                    <div class="feature-item has">✓ Review Photos</div>
+                </div>
+                
+                <div class="highlight-box">
+                    <strong>Key Differentiator:</strong> Etsy excels at connecting buyers with artisans through storytelling. Each product page emphasizes the maker behind the item, creating emotional connections that justify sustainable, handmade purchases.
+                </div>
+            </div>
+
+            <!-- Reference 3: Package Free -->
+            <div class="card reference-card">
+                <h3><span class="reference-number">3</span> Package Free Shop (packagefreeshop.com)</h3>
+                <p class="text-muted">Zero-waste lifestyle products and plastic-free alternatives</p>
+                
+                <h4>Unique Components Observed:</h4>
+                <div class="feature-list">
+                    <div class="feature-item has">✓ Plastic-Free Guarantee</div>
+                    <div class="feature-item has">✓ Waste Reduction Tips</div>
+                    <div class="feature-item has">✓ "How to Use" Guides</div>
+                    <div class="feature-item has">✓ Starter Kit Bundles</div>
+                    <div class="feature-item has">✓ Impact Statistics</div>
+                    <div class="feature-item missing">✗ Interactive Features</div>
+                </div>
+                
+                <div class="highlight-box">
+                    <strong>Key Differentiator:</strong> Package Free focuses on education alongside products. Their detailed guides help customers transition to zero-waste living, positioning the brand as a trusted resource rather than just a retailer.
+                </div>
+            </div>
+
+            <!-- Reference 4: Tentree -->
+            <div class="card reference-card">
+                <h3><span class="reference-number">4</span> Tentree (tentree.com)</h3>
+                <p class="text-muted">Sustainable apparel that plants 10 trees for every item purchased</p>
+                
+                <h4>Unique Components Observed:</h4>
+                <div class="feature-list">
+                    <div class="feature-item has">✓ Tree Counter Widget</div>
+                    <div class="feature-item has">✓ Impact Dashboard</div>
+                    <div class="feature-item has">✓ Tree Tracking Code</div>
+                    <div class="feature-item has">✓ Climate+ Program</div>
+                    <div class="feature-item has">✓ Materials Education</div>
+                    <div class="feature-item has">✓ Community Projects Map</div>
+                </div>
+                
+                <div class="highlight-box">
+                    <strong>Key Differentiator:</strong> Tentree's gamification of environmental impact is unique. The tree-tracking feature creates ongoing engagement, and their real-time counter showing total trees planted creates a sense of collective achievement.
+                </div>
+            </div>
+
+            <!-- Reference 5: Grove Collaborative -->
+            <div class="card reference-card">
+                <h3><span class="reference-number">5</span> Grove Collaborative (grove.co)</h3>
+                <p class="text-muted">Natural home and personal care products subscription service</p>
+                
+                <h4>Unique Components Observed:</h4>
+                <div class="feature-list">
+                    <div class="feature-item has">✓ Subscription Model</div>
+                    <div class="feature-item has">✓ Product Bundling</div>
+                    <div class="feature-item has">✓ Auto-Ship Scheduling</div>
+                    <div class="feature-item has">✓ Ingredient Transparency</div>
+                    <div class="feature-item has">✓ Refill Programs</div>
+                    <div class="feature-item has">✓ Carbon Neutral Claims</div>
+                </div>
+                
+                <div class="highlight-box">
+                    <strong>Key Differentiator:</strong> Grove's subscription model with flexible scheduling solves the convenience barrier to sustainable living. Their ingredient rating system helps customers make informed choices quickly.
+                </div>
+            </div>
+
+            <!-- =================================================================
+                 SUMMARY AND INSIGHTS
+                 ================================================================= -->
+            <h2 class="mt-4 mb-3">Research Summary & Insights</h2>
+            
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <div class="summary-icon">🎯</div>
+                    <h4>Common Elements</h4>
+                    <p>All successful sustainable e-commerce sites feature clear sustainability messaging, educational content, and transparent practices.</p>
+                </div>
+                
+                <div class="summary-card">
+                    <div class="summary-icon">💡</div>
+                    <h4>Innovation Areas</h4>
+                    <p>Impact tracking, gamification, and subscription models are emerging trends that enhance customer engagement.</p>
+                </div>
+                
+                <div class="summary-card">
+                    <div class="summary-icon">📊</div>
+                    <h4>EcoMart Position</h4>
+                    <p>EcoMart covers 12 of 17 analyzed features. Opportunities exist in impact tracking and product quick-view functionality.</p>
+                </div>
+                
+                <div class="summary-card">
+                    <div class="summary-icon">🚀</div>
+                    <h4>Future Enhancements</h4>
+                    <p>Recommended additions: environmental impact calculator, tree planting program, and enhanced product filtering.</p>
+                </div>
+            </div>
+
+            <!-- Conclusion -->
+            <div class="article-full">
+                <h3>Conclusion</h3>
+                <p>This research demonstrates that successful sustainable e-commerce websites share common foundational elements while differentiating through unique features aligned with their brand mission. EcoMart successfully implements core e-commerce functionality and sustainability messaging. Future development should focus on interactive impact features and enhanced product discovery tools to match industry leaders.</p>
+                
+                <p>The analysis reveals that customer education and transparency are as important as the shopping experience itself. Websites that help customers understand the impact of their purchases and provide resources for sustainable living create stronger brand loyalty and higher customer lifetime value.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- =================================================================
+         FOOTER
+         ================================================================= -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="logo" style="margin-bottom: 1rem;">
+                        <div class="logo-icon">🌿</div>
+                        <span style="color: white;">EcoMart</span>
+                    </div>
+                    <p>Making sustainable living accessible to everyone.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="products.html">Products</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="about.html">About Us</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Customer Service</h4>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="#">Shipping Info</a>
+                    <a href="#">Returns</a>
+                    <a href="#">FAQ</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <p>📍 123 Green Street, Eco City</p>
+                    <p>📧 hello@ecomart.com</p>
+                    <p>📞 (555) 123-4567</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 EcoMart. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
