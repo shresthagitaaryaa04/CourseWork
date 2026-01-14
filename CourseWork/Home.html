@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Meta Tags for SEO and Responsiveness-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EcoMart - Your one-stop shop for sustainable lifestyle products. Discover eco-friendly alternatives for a greener tomorrow.">
+    <meta name="keywords" content="sustainable products, eco-friendly, green living, bamboo products, organic, reusable">
+    <meta name="author" content="EcoMart">
+    <!--Page title displayed in the browser tab-->
+    <title>Eco Mart - Sustainable Lifestyle Insights</title>
+    <!--Link to icon in browser tab-->
+    <link rel="icon" href="images/Logo.png" type="img/png">
+    <!--Link to Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!--Link to external stylesheet for styling-->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Stats counter section */
+        :root{
+            /* provide three values for hsl(var(--primary)) -> "hue saturation% lightness%" */
+            --primary: 142 71% 20%;
+            --font-display: 'Lora', serif;
+        }
+        .stats-section {
+            background-color: hsl(var(--primary));
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-family: var(--font-display);
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            opacity: 0.9;
+        }
+        
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--Navigation Bar-->
+    <header class="navbar">
+      <div class="container">
+        <div class="logo">
+          <img src="images/Logo.png" alt="logo" class="site-logo">
+          <span>EcoMart</span>
+        </div>
+
+        <nav>
+          <ul class="nav-links">
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="product.html">PRODUCT</a></li>
+            <li><a href="blog.html">BLOG</a></li>
+            <li><a href="research.html">RESEARCH</a></li>
+            <li><a href="about.html">ABOUT US</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+        </nav>
+
+        <!--a href="#" class="btn btn-primary signup">Sign Up</a-->
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-content container">
+        <h1>Sustainable Living Starts Here</h1>
+        <p>Discover our collection of eco-friendly products designed to reduce your environmental footprint while enhancing your daily life.</p>
+        <div class="hero-buttons">
+                  <a href="products.html" class="btn btn-secondary btn-lg">Shop Now</a>
+                  <a href="about.html" class="btn btn-outline btn-lg" style="border-color: white; color: white;">Learn More</a>
+        </div>
+      </div>
+    </section>
+     <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">25K+</div>
+                    <div class="stat-label">Happy Customers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Eco Products</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1M+</div>
+                    <div class="stat-label">Plastic Saved</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4.9★</div>
+                    <div class="stat-label">Customer Rating</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="text-center mb-4">
+                <h2>Featured Products</h2>
+                <p>Our most loved sustainable alternatives</p>
+            </div>
+            
+            <!-- Products Grid -->
+            <div class="products-grid">
+                <!-- Product Card 1: Bamboo Water Bottle -->
+                <div class="product-card">
+                    <div class="card-image">
+                        <img src="images/products/bamboo-water-bottle.jpg" alt="Bamboo Water Bottle">
+                        <span class="product-badge">-20%</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="product-category">Kitchen</span>
+                        <h3 class="card-title">Bamboo Water Bottle</h3>
+                        <p class="card-description">Insulated bamboo bottle keeps drinks cold for 24 hours</p>
+                        <div class="product-price">
+                            <span class="price-current">$24.99</span>
+                            <span class="price-original">$31.24</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart(1)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 2: Organic Tote Bag -->
+                <div class="product-card">
+                    <div class="card-image">
+                        <img src="images/products/organic-tote-bag.jpg" alt="Organic Tote Bag">
+                        <span class="product-badge">-15%</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="product-category">Bags</span>
+                        <h3 class="card-title">Organic Cotton Tote</h3>
+                        <p class="card-description">Durable shopping bag made from 100% organic cotton</p>
+                        <div class="product-price">
+                            <span class="price-current">$18.99</span>
+                            <span class="price-original">$22.34</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart(2)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 3: Bamboo Cutlery Set -->
+                <div class="product-card">
+                    <div class="card-image">
+                        <img src="images/products/bamboo-cutlery-set.jpg" alt="Bamboo Cutlery Set">
+                        <span class="product-badge">-25%</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="product-category">Kitchen</span>
+                        <h3 class="card-title">Bamboo Cutlery Set</h3>
+                        <p class="card-description">Portable utensil set with carrying case</p>
+                        <div class="product-price">
+                            <span class="price-current">$12.99</span>
+                            <span class="price-original">$17.32</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="addToCart(4)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- View All Button -->
+            <div class="text-center mt-4">
+                <a href="products.html" class="btn btn-outline btn-lg">View All Products</a>
+            </div>
+        </div>
+    <!-- Why Choose EcoMart (4-column) -->
+    <section class="why-choose-section">
+        <div class="why-choose-inner container">
+            <div class="why-choose-header">
+                <h2>Why Choose EcoMart?</h2>
+                <p>We're committed to making sustainable living accessible.</p>
+            </div>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-title">Eco-Friendly</div>
+                    <div class="why-desc">All products are sustainably sourced and environmentally responsible.</div>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-title">Quality Assured</div>
+                    <div class="why-desc">Rigorous testing ensures durability and long-lasting performance.</div>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-title">Carbon-Neutral Shipping</div>
+                    <div class="why-desc">We offset 100% of shipping emissions for every order.</div>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-title">Community First</div>
+                    <div class="why-desc">5% of profits support environmental conservation projects.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- NEWSLETTER SECTION -->
+    <section class="newsletter-section">
+        <div class="newsletter-inner container">
+            <div class="newsletter-text">
+                <h2>Join Our Green Community</h2>
+                <p>Subscribe to our newsletter for eco-tips, exclusive offers, and updates on new sustainable products.</p>
+            </div>
+
+            <form class="newsletter-form" aria-label="Subscribe to newsletter">
+                <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+
+
+  <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Company Info -->
+                <div class="footer-column">
+                        <div class="logo" style="margin-bottom: 1rem;">
+                            <img src="images/Logo.png" alt="EcoMart logo" class="site-logo">
+                            <span style="color: white;">EcoMart</span>
+                        </div>
+                    <p>Making sustainable living accessible to everyone. Join us in creating a greener tomorrow.</p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="products.html">Products</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="about.html">About Us</a>
+                </div>
+                
+                <!-- Customer Service -->
+                <div class="footer-column">
+                    <h4>Customer Service</h4>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="#">Shipping Info</a>
+                    <a href="#">Returns & Refunds</a>
+                    <a href="#">FAQ</a>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <a href="https://maps.app.goo.gl/xK6wbyG47TA57aPF6" target="_blank">📍 Kamal Pokhari, Kathmandu, Nepal, 44600</a>
+                    <a href="https://islington.edu.np/" target="_blank">📧 www.islington.edu.np</a>
+                    <a href="tel:+9779801000400">📞 +977 9801000400</a>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 EcoMart. All Rights Reserved. </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="js/main.js"></script>
+</body>
+</html>
